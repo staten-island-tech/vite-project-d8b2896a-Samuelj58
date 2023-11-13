@@ -1,3 +1,7 @@
+//tilda
+//cd project
+//npm run dev
+//to link ./js/.mainjs
 const Food = [
     {
         name: "Tomato Soup",
@@ -24,3 +28,5 @@ const Food = [
         
     }
 ]
+const name= blank
+export {menu, name}
