@@ -3,20 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
-  <h1>Menu to resturant</h1>
+  <h1>Menu</h1>
   <body>
-    <form id="form">
-      <input type="radio" id="electric" name="fuel" value="electric">
-      <label>A-Z</label>
-      <input type="radio" id="gasoline" name="fuel" value="gasoline">
-      <label>Cost</label>
-      <input type="radio" id="hybrid" name="fuel" value="hybrid">
-      <label>Meat</label><br>
+    <form id="form"> 
+      <input type="radio" id="alpha" name="sorting" value="alpha">
+      <label for="alpha">A-Z</label>
+      <input type="radio" id="money" name="sorting" value="money">
+      <label for="money">Cost</label>
+      <input type="radio" id="Vegetarian" name="sorting" value="Vegetarian">
+      <label for="Vegetarian">Vegetarian</label><br>
       <button id="submit">Submit</button>
-    </form>
-    <script type="module" src="/main.js"></script>
+  </form>
+  
+  <button id="theme-toggle">Toggle Theme</button>
+  <div class="cards-container">
+    <!-- Cards will be generated here -->
+  </div>
+  
+
+    <div id="cardsContainer" class="card-container"></div>
+
+    <div id="app"></div>
+    <script type="module" src="./js/main.js"></script>
   </body>
 </html>
