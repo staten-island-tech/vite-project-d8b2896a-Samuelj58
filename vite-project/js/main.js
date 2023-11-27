@@ -102,55 +102,54 @@ const foods = [
       image: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.WJgX5gUVpXSxy5KJ9ViHggAAAA%26pid%3DApi&f=1&ipt=7a7ba910da33bd5ed27fde75441ddd8b2079f1b3352df6db92a005df9d70d033&ipo=images'
     },
   ]
-
   
-  function createCard(food) {
+  function createCards(foods) {
     const cardContainer = document.getElementById('cardsContainer');
+    cardContainer.innerHTML = ''; // Clear the current cards
   
-    const card = document.createElement('div');
-    card.classList.add('card');
+    foods.forEach(food => {
+      const cardHTML = `
+        <div class="card">
+          <h2>${food.name}</h2>
+          <p>${food.hasMeat ? 'Contains Meat' : 'Vegetarian'}</p>
+          <p>Price: $${food.price}</p>
+          <img src="${food.image}" alt="${food.name}">
+        </div>
+      `;
   
-    const image = document.createElement('img');
-    image.src = food.image;
-    image.alt = food.name;
-    card.appendChild(image);
-  
-    const content = document.createElement('div');
-    content.classList.add('card-content');
-  
-    const name = document.createElement('h2');
-    name.textContent = food.name;
-    content.appendChild(name);
-  
-    const hasMeat = document.createElement('p');
-    hasMeat.textContent = food.hasMeat ? 'Contains Meat' : 'Vegetarian';
-    content.appendChild(hasMeat);
-  
-    const price = document.createElement('p');
-    price.textContent = `Price: $${food.price}`;
-    content.appendChild(price);
-  
-    card.appendChild(content);
-    cardContainer.appendChild(card);
+      cardContainer.insertAdjacentHTML('beforeend', cardHTML);
+    });
   }
   
-  foods.forEach(createCard);
+  // Rest of your code...
   
-
-  const sortedMenu = foods.sort((a, b) => a.name.localeCompare(b.name));
-  console.log(sortedMenu);
+  // Sorting functions
+  const sortByName = () => {
+    const sortedMenu = foods.slice().sort((a, b) => a.name.localeCompare(b.name));
+    createCards(sortedMenu);
+  };
   
-  const Vegie = foods.filter(food => !food.hasMeat);
-  console.log(Vegie)
+  const sortByVeggie = () => {
+    const veggie = foods.filter(food => !food.hasMeat);
+    createCards(veggie);
+  };
   
-  const price = foods.slice().sort((a, b) => a.price - b.price);
-  console.log(price)
-
+  const sortByPrice = () => {
+    const price = foods.slice().sort((a, b) => a.price - b.price);
+    createCards(price);
+  };
+  
+  // Call the function to generate cards initially
+  createCards(foods);
+  
+  // Event listeners for sorting buttons
+  document.getElementById('alpha').addEventListener('click', sortByName);
+  document.getElementById('money').addEventListener('click', sortByPrice);
+  document.getElementById('Vegetarian').addEventListener('click', sortByVeggie);
+  
   const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
 themeToggle.addEventListener('click', () => {
   body.classList.toggle('dark-theme');
 });
-
-
