@@ -18,7 +18,6 @@ html, body * {
 body {
   background-color: var(--background-color);
   color: var(--text-color);
-  /* Other styles */
 }
 .dark-theme {
   --background-color: #383838;
@@ -27,5 +26,4 @@ body {
 .dark-theme body {
   background-color: var(--background-color);
   color: var(--text-color);
-  /* Other styles */
 }
