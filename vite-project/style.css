@@ -10,6 +10,13 @@ html, body * {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  padding: 20px;
+  margin: 10px;
+}
+.card img {
+  max-width: 400px;
+  height: 400x;
+  border-radius: 4px;
 }
 :root {
   --background-color: #dfb6b6;
