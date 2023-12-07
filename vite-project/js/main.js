@@ -176,3 +176,40 @@ themeToggle.addEventListener("click", () => {
   // Toggle dark theme by toggling CSS class on the body
   body.classList.toggle("dark-theme");
 });
+
+/* function cardsort() {
+const Vegie = foods.filter((food) => !food.hasMeat);
+  Vegie.forEach((food) => DOMSelectors.cards.insertAdjacentHTML("beforeend",`<div class="card" id="all">
+  <h2 class="text">${food.name}</h2>
+  <img src="${food.image}" alt="" class="card-img">
+  <h2 class="info">Type: ${food.hasMeat ? "Meat" : "Vegetarian"}</h2>
+  <p>Price: $${food.price}</p>
+  </div>`));
+}
+
+function cardsor() {
+  const Alpha = foods.slice().sort((a, b) => a.name.localeCompare(b.name));
+  Alpha.forEach((food) => DOMSelectors.cards.insertAdjacentHTML("beforeend",`<div class="card" id="all">
+  <h2 class="text">${food.name}</h2>
+  <img src="${food.image}" alt="" class="card-img">
+  <h2 class="info">Type: ${food.hasMeat ? "Meat" : "Vegetarian"}</h2>
+  <p>Price: $${food.price}</p>
+  </div>`));
+}
+
+function cardso() {
+  const PRic = foods.slice().sort((a, b) => a.price - b.price);
+  PRic.forEach((food) => DOMSelectors.cards.insertAdjacentHTML("beforeend",`<div class="card" id="all">
+  <h2 class="text">${food.name}</h2>
+  <img src="${food.image}" alt="" class="card-img">
+  <h2 class="info">Type: ${food.hasMeat ? "Meat" : "Vegetarian"}</h2>
+  <p>Price: $${food.price}</p>
+  </div>`));
+}
+
+function clearCards() {
+  const cardContainer = document.getElementById("cardsContainer");
+  cardContainer.innerHTML = ""; 
+}
+
+ */
